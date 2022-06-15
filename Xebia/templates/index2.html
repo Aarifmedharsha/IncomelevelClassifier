@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>prediction model</title>
+
+<link rel="stylesheet" href="static/style2.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediction of Income level </h1>
+ 
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age in Years" required="required" />
+      <input type="text" name="fnlwgt" placeholder="Final Weight" required="required" />
+      <input type="text" name="cg" placeholder="Capital Gain" required="required" />
+      <input type="text" name="cl" placeholder="Captial Loss" required="required" />
+      <input type="text" name="incomelvl" placeholder="House per week" required="required" />
+		<br>
+
+        <button class="jeeet" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        
+    </form>
+
+   <br>
+   {{ prediction_text }}
+   <br>
+
+ </div>
+
+
+</body>
+</html>
